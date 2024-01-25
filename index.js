@@ -3,7 +3,7 @@ const { conn } = require('./src/db.js');
 const syncApiDb = require('./src/controllers/APItoDB/syncApiDb');
 require('dotenv').config();
 
-conn.sync({ force: true }).then(async() => {
+conn.sync(false).then(async() => {
 await syncApiDb();
 server.listen(process.env.PORT, () => {
   console.log('Server listening on port', process.env.PORT);
