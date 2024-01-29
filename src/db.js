@@ -4,7 +4,7 @@ const { Sequelize } = require("sequelize");
 const fs = require('fs');
 const path = require('path');
 const {
-  DB_USER, DB_PASSWORD, DB_HOST,
+  DB_USER, DB_PASSWORD, DB_HOST, DB_DATABASE, DB_PORT
 } = process.env;
 
 // const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_DATABASE}`, {
@@ -14,9 +14,9 @@ const {
 
 
                                             // database, username, password
-const sequelize = new Sequelize('railway', 'postgres', 'fGGF*2*EebE2Gd11g1a4ABDffa*DDbeF', {
-  host: 'roundhouse.proxy.rlwy.net', //host
-  port: 26259, //port
+const sequelize = new Sequelize(DB_DATABASE, DB_USER , DB_PASSWORD, {
+  host: DB_HOST, //host
+  port: DB_PORT, //port
   dialect: 'postgres'
 });
 

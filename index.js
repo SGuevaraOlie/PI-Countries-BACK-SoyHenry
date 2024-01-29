@@ -1,6 +1,6 @@
 const server = require("./src/server");
 const {conn} = require('./src/db.js');
-const syncApiDb = require('./src/controllers/APItoDB/syncApiDb');
+// const syncApiDb = require('./src/controllers/APItoDB/syncApiDb');
 require('dotenv').config();
 
 conn
