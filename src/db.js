@@ -7,10 +7,19 @@ const {
   DB_USER, DB_PASSWORD, DB_HOST,
 } = process.env;
 
-const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/countries`, {
-  logging: false, 
-  native: false, 
+// const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_DATABASE}`, {
+//   logging: false,
+//   native: false,
+// });
+
+
+                                            // database, username, password
+const sequelize = new Sequelize('railway', 'postgres', 'fGGF*2*EebE2Gd11g1a4ABDffa*DDbeF', {
+  host: 'roundhouse.proxy.rlwy.net', //host
+  port: 26259, //port
+  dialect: 'postgres'
 });
+
 const basename = path.basename(__filename);
 
 const modelDefiners = [];
